@@ -3253,6 +3253,182 @@ body{
   #site .hero .ring-icon-sparkle{animation:none!important}
 }
 
+
+/* FINAL CROSS-DEVICE HERO ALIGNMENT — keep the existing ivory geometric texture */
+#site .hero{
+  min-height:100svh!important;
+  height:100svh!important;
+  max-height:none!important;
+  box-sizing:border-box!important;
+  padding:clamp(56px,8svh,78px) 18px clamp(56px,8svh,76px)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+}
+#site .hero:before{inset:14px!important;z-index:4!important;pointer-events:none!important}
+
+/* Keep the floral arch as a background ornament, never across the wording */
+#site .hero-arch-scene{
+  position:absolute!important;
+  inset:7% 0 8%!important;
+  width:100%!important;
+  height:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+  opacity:.66!important;
+  z-index:0!important;
+  transform:none!important;
+  clip-path:none!important;
+}
+#site .royal-arch{
+  display:block!important;
+  width:min(100%,430px)!important;
+  height:100%!important;
+  max-height:78svh!important;
+  object-fit:contain!important;
+  overflow:visible!important;
+}
+/* This horizontal arch base was running directly through the rings */
+#site .royal-arch .arch-base{display:none!important;opacity:0!important}
+#site .royal-arch .arch-outline{opacity:.34!important;stroke-width:2.6!important}
+#site .royal-arch .arch-inner{opacity:.2!important;stroke-width:1.1!important}
+#site .royal-arch .floral-trail{opacity:.72!important}
+#site .hero-inner{
+  position:relative!important;
+  z-index:3!important;
+  width:min(100%,520px)!important;
+  max-width:520px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  transform:none!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:clamp(4px,1.05svh,10px)!important;
+  text-align:center!important;
+}
+#site .hero-inner .overline:first-child{
+  display:block!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0 4px!important;
+  font-size:clamp(9px,2.25vw,11px)!important;
+  line-height:1.45!important;
+  letter-spacing:clamp(.14em,.65vw,.24em)!important;
+  color:#8e6337!important;
+  text-shadow:0 1px 5px rgba(255,250,239,.9)!important;
+}
+#site .hero-inner h1{
+  display:block!important;
+  width:100%!important;
+  margin:0!important;
+  padding:0 2px!important;
+  font-family:Cinzel,Georgia,serif!important;
+  font-size:clamp(39px,10vw,57px)!important;
+  line-height:1.08!important;
+  letter-spacing:.015em!important;
+  font-weight:700!important;
+  color:#8f263b!important;
+  text-shadow:none!important;
+  white-space:nowrap!important;
+}
+#site .hero-inner .ring-icon-wrap{
+  flex:0 0 auto!important;
+  width:clamp(88px,23vw,104px)!important;
+  height:auto!important;
+  aspect-ratio:1.08/1!important;
+  margin:clamp(2px,.7svh,7px) auto!important;
+  padding:0!important;
+  position:relative!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:visible!important;
+  z-index:4!important;
+}
+#site .hero-inner .engagement-rings-icon{
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  display:block!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+  animation:engagementIconFloat 5.2s ease-in-out infinite,
+            engagementIconGlow 3.4s ease-in-out infinite!important;
+}
+#site .hero-inner .ring-icon-sparkle{z-index:5!important;pointer-events:none!important}
+#site .hero-inner .hero-sub{
+  margin:clamp(2px,.65svh,7px) 0 0!important;
+  padding:0 3px!important;
+  font-size:clamp(11px,2.9vw,15px)!important;
+  line-height:1.45!important;
+  letter-spacing:clamp(.09em,.4vw,.14em)!important;
+  color:#95632c!important;
+  white-space:normal!important;
+}
+#site .hero-inner .overline:last-child{
+  margin:0!important;
+  padding:0 4px!important;
+  font-size:clamp(9px,2.2vw,11px)!important;
+  line-height:1.5!important;
+  letter-spacing:clamp(.12em,.48vw,.2em)!important;
+  color:#8d6747!important;
+  white-space:normal!important;
+}
+#site .scroll-cue{
+  z-index:5!important;
+  bottom:clamp(20px,3.2svh,30px)!important;
+  font-size:clamp(8px,2vw,10px)!important;
+  letter-spacing:.2em!important;
+  color:#8e673e!important;
+  white-space:nowrap!important;
+}
+#site .music-toggle,#site #musicToggle{
+  z-index:8!important;
+  top:clamp(12px,2svh,20px)!important;
+  right:clamp(12px,3vw,22px)!important;
+}
+
+/* Shorter phones: compact the same centered composition, not a different layout */
+@media(max-width:700px){
+  #site .hero{padding:54px 16px 58px!important}
+  #site .hero:before{inset:12px!important}
+  #site .hero-arch-scene{inset:8% 0 9%!important;opacity:.56!important}
+  #site .royal-arch{width:min(100%,390px)!important;max-height:75svh!important}
+  #site .hero-inner{gap:clamp(3px,.85svh,8px)!important}
+  #site .hero-inner h1{font-size:clamp(38px,10vw,54px)!important}
+  #site .hero-inner .ring-icon-wrap{width:clamp(84px,22vw,98px)!important}
+}
+@media(max-width:380px){
+  #site .hero{padding-left:13px!important;padding-right:13px!important}
+  #site .hero-inner h1{font-size:clamp(36px,9.8vw,45px)!important}
+  #site .hero-inner .ring-icon-wrap{width:82px!important}
+  #site .hero-inner .overline:first-child,
+  #site .hero-inner .overline:last-child{letter-spacing:.12em!important}
+}
+@media(max-height:740px){
+  #site .hero{padding-top:48px!important;padding-bottom:50px!important}
+  #site .hero-inner{gap:3px!important}
+  #site .hero-inner h1{font-size:clamp(35px,8.8vw,49px)!important}
+  #site .hero-inner .ring-icon-wrap{width:78px!important;margin:1px auto!important}
+  #site .hero-sub{margin:1px 0!important}
+  #site .scroll-cue{bottom:15px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #site .hero-inner .engagement-rings-icon,
+  #site .hero-inner .ring-icon-sparkle,
+  #site .hero-arch-scene,
+  #site .scroll-cue{animation:none!important}
+}
+
 </style>
 
 <style id="readability-and-flat-heading-fix">

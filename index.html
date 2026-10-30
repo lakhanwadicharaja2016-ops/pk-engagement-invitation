@@ -1405,6 +1405,137 @@ body{background:#191210!important}
   .royal-arch{max-height:68vh !important}
 }
 
+
+/* FINAL RESPONSIVE HERO POLISH — balanced arch and animated ornaments on phones */
+@media (max-width: 700px){
+  .hero{
+    min-height:100svh;
+    padding:76px 18px 72px;
+    overflow:hidden;
+  }
+  .hero:before{inset:14px!important}
+  .hero-arch-scene{
+    top:clamp(132px,20vh,184px)!important;
+    bottom:auto!important;
+    left:0!important;
+    right:0!important;
+    width:100%!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+    clip-path:none!important;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    opacity:.78;
+  }
+  .royal-arch{
+    display:block;
+    width:min(100%,430px)!important;
+    max-width:430px!important;
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+    flex:0 1 auto;
+  }
+  .hero-inner{
+    width:100%!important;
+    max-width:520px;
+    margin:0 auto;
+    padding-top:clamp(170px,24vh,215px);
+    z-index:2;
+  }
+  .overline{font-size:9px;letter-spacing:.24em}
+  .hero h1{
+    font-size:clamp(37px,10vw,58px)!important;
+    line-height:1.08!important;
+    margin:12px 0 5px!important;
+  }
+  .hero-sub{
+    font-size:clamp(11px,3vw,15px)!important;
+    letter-spacing:.13em!important;
+    margin:14px 0!important;
+  }
+  .couple-art{
+    width:min(64vw,260px)!important;
+    max-height:25vh!important;
+    margin:10px auto!important;
+  }
+  .scroll-cue{bottom:20px;font-size:8px;letter-spacing:.2em}
+  /* Avoid SVG ornaments touching the frame on narrow phones */
+  .arch-outline{stroke-width:2.8}
+  .arch-inner{opacity:.3}
+  .floral-trail{stroke-width:2.3}
+  .hanging-lantern{stroke-width:2.8}
+}
+@media(max-width:380px){
+  .hero{padding-left:14px;padding-right:14px}
+  .hero:before{inset:12px!important}
+  .hero-arch-scene{top:clamp(126px,19vh,160px)!important}
+  .royal-arch{width:min(100%,360px)!important}
+  .hero-inner{padding-top:clamp(158px,22vh,185px)}
+  .hero h1{font-size:clamp(34px,9.4vw,42px)!important}
+  .hero-sub{letter-spacing:.1em!important}
+  .overline{letter-spacing:.18em}
+}
+@media(min-width:381px) and (max-width:700px){
+  .hero-inner{padding-top:clamp(176px,24vh,215px)}
+}
+
+/* Smooth staged reveal and gentle independent motion for each ornament */
+.floral-trail{
+  animation:garlandDrop 1.65s 1.35s cubic-bezier(.2,.75,.25,1) forwards,
+             garlandSway 7s 3s ease-in-out infinite!important;
+}
+@keyframes garlandDrop{
+  0%{opacity:0;translate:0 -30px}
+  100%{opacity:.9;translate:0 0}
+}
+@keyframes garlandSway{
+  0%,100%{transform:rotate(-1deg)}
+  50%{transform:rotate(1deg)}
+}
+.hanging-lantern{
+  animation:lanternDrop 1.45s 1.7s ease-out forwards,
+             lanternSway 5.8s 3.2s ease-in-out infinite!important;
+}
+@keyframes lanternDrop{
+  0%{opacity:0;translate:0 -24px}
+  100%{opacity:.92;translate:0 0}
+}
+@keyframes lanternSway{
+  0%,100%{transform:rotate(-2deg)}
+  50%{transform:rotate(2deg)}
+}
+.flower-bloom{
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:flowerShine 4.2s ease-in-out infinite;
+}
+@keyframes flowerShine{
+  0%,100%{filter:drop-shadow(0 0 2px #f5e5c244);opacity:.88}
+  50%{filter:drop-shadow(0 0 7px #fff0d6aa);opacity:1}
+}
+.sage-leaves{
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:leafDrift 6s ease-in-out infinite;
+}
+@keyframes leafDrift{
+  0%,100%{transform:rotate(-1deg)}
+  50%{transform:rotate(1.5deg)}
+}
+.lantern-flame{
+  animation:flameGlow 2.2s ease-in-out infinite;
+}
+@keyframes flameGlow{
+  0%,100%{opacity:.72}
+  50%{opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .flower-bloom,.sage-leaves,.lantern-flame{animation:none!important}
+}
+
 </style>
 </head>
 <body>

@@ -1626,6 +1626,134 @@ body{background:#191210!important}
   .scroll-cue{bottom:12px!important}
 }
 
+
+/* CROSS-DEVICE HERO ALIGNMENT — Android Chrome + iPhone Safari */
+@media (max-width: 700px){
+  .hero{
+    position:relative!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    width:100%!important;
+    height:100svh!important;
+    min-height:100svh!important;
+    max-height:100svh!important;
+    padding:0 16px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+  .hero:before{inset:14px!important}
+  /* Keep the complete arch centered and safely inside the frame */
+  .hero-arch-scene{
+    position:absolute!important;
+    top:17%!important;
+    bottom:auto!important;
+    left:50%!important;
+    right:auto!important;
+    width:min(100%,470px)!important;
+    height:62svh!important;
+    max-height:540px!important;
+    transform:translateX(-50%)!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    clip-path:none!important;
+    opacity:.68!important;
+    z-index:1!important;
+  }
+  .royal-arch{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    max-height:100%!important;
+    object-fit:contain!important;
+    overflow:hidden!important;
+  }
+  /* Use one predictable vertical stack rather than browser-dependent margins */
+  .hero-inner{
+    position:absolute!important;
+    top:50%!important;
+    left:50%!important;
+    transform:translate(-50%,-50%)!important;
+    width:calc(100% - 42px)!important;
+    max-width:440px!important;
+    margin:0!important;
+    padding:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:clamp(5px,1.05svh,12px)!important;
+    z-index:2!important;
+    text-align:center!important;
+  }
+  .hero-inner .overline{
+    display:block!important;
+    width:100%!important;
+    margin:0!important;
+    font-size:clamp(8px,2.25vw,10px)!important;
+    line-height:1.5!important;
+    letter-spacing:clamp(.12em,.22em,.22em)!important;
+    white-space:normal!important;
+  }
+  .hero-inner h1{
+    display:block!important;
+    width:100%!important;
+    margin:0!important;
+    font-size:clamp(38px,9.7vw,54px)!important;
+    line-height:1.02!important;
+    letter-spacing:.035em!important;
+    white-space:nowrap!important;
+  }
+  .hero-inner .ring-divider{
+    flex:0 0 auto!important;
+    width:160px!important;
+    height:94px!important;
+    margin:0 auto!important;
+    transform:none!important;
+  }
+  .hero-inner .hero-sub{
+    width:100%!important;
+    margin:0!important;
+    font-size:clamp(11px,2.8vw,14px)!important;
+    line-height:1.45!important;
+    letter-spacing:.12em!important;
+    white-space:normal!important;
+  }
+  .scroll-cue{
+    position:absolute!important;
+    left:50%!important;
+    bottom:clamp(17px,2.8svh,25px)!important;
+    transform:translateX(-50%)!important;
+    z-index:4!important;
+    width:max-content!important;
+    max-width:90%!important;
+    font-size:clamp(8px,2vw,9px)!important;
+    letter-spacing:.18em!important;
+    text-align:center!important;
+  }
+  .scroll-cue span{margin-top:4px!important}
+  .music-control{top:calc(env(safe-area-inset-top, 0px) + 12px)!important;right:12px!important}
+}
+@media (max-width:380px){
+  .hero-arch-scene{top:18%!important;width:calc(100% - 28px)!important;height:58svh!important}
+  .hero-inner{width:calc(100% - 36px)!important;gap:clamp(4px,.8svh,8px)!important}
+  .hero-inner h1{font-size:clamp(35px,9.4vw,42px)!important}
+  .hero-inner .ring-divider{transform:scale(.9)!important;margin:-3px auto!important}
+  .hero-inner .hero-sub{font-size:10px!important;letter-spacing:.09em!important}
+}
+@media (max-height:740px) and (max-width:700px){
+  .hero-arch-scene{top:15%!important;height:58svh!important}
+  .hero-inner{gap:5px!important;transform:translate(-50%,-51%) scale(.91)!important}
+  .scroll-cue{bottom:14px!important}
+}
+@media (max-height:620px) and (max-width:700px){
+  .hero-inner{transform:translate(-50%,-51%) scale(.82)!important}
+  .hero-arch-scene{top:13%!important;height:55svh!important}
+}
+
 </style>
 </head>
 <body>

@@ -2454,25 +2454,28 @@ body{
 
 
 
-/* SUBTLE ROYAL LACE PAPER TEXTURE — repeated consistently on every invitation page */
-#intro, #site .hero, #site .content, #site .footer{position:relative;isolation:isolate;}
+/* RECONSTRUCTED ROYAL GEOMETRIC PAPER TEXTURE — KEEP THE SAME LOOK ON EVERY PAGE */
+#intro, #site .hero, #site .content, #site .footer{
+  position:relative!important;
+  isolation:isolate!important;
+}
 #intro::after, #site .hero::after, #site .content::after, #site .footer::before{
   content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22180%22%20height%3D%22180%22%20viewBox%3D%220%200%20180%20180%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ad9368%22%20stroke-width%3D%221.15%22%20stroke-opacity%3D%22.34%22%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2245%22%20r%3D%2231%22%2F%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2245%22%20r%3D%2223%22%2F%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%2245%22%20r%3D%2231%22%2F%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%2245%22%20r%3D%2223%22%2F%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%22135%22%20r%3D%2231%22%2F%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%22135%22%20r%3D%2223%22%2F%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%22135%22%20r%3D%2231%22%2F%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%22135%22%20r%3D%2223%22%2F%3E%3Cpath%20d%3D%22M45%207%20C55%2024%2066%2035%2083%2045%20C66%2055%2055%2066%2045%2083%20C35%2066%2024%2055%207%2045%20C24%2035%2035%2024%2045%207Z%22%2F%3E%3Cpath%20d%3D%22M135%207%20C145%2024%20156%2035%20173%2045%20C156%2055%20145%2066%20135%2083%20C125%2066%20114%2055%2097%2045%20C114%2035%20125%2024%20135%207Z%22%2F%3E%3Cpath%20d%3D%22M45%2097%20C55%20114%2066%20125%2083%20135%20C66%20145%2055%20156%2045%20173%20C35%20156%2024%20145%207%20135%20C24%20125%2035%20114%2045%2097Z%22%2F%3E%3Cpath%20d%3D%22M135%2097%20C145%20114%20156%20125%20173%20135%20C156%20145%20145%20156%20135%20173%20C125%20156%20114%20145%2097%20135%20C114%20125%20125%20114%20135%2097Z%22%2F%3E%3Cpath%20d%3D%22M90%200%20C104%2020%20104%2034%2090%2045%20C76%2034%2076%2020%2090%200Z%20M90%20180%20C104%20160%20104%20146%2090%20135%20C76%20146%2076%20160%2090%20180Z%20M0%2090%20C20%2076%2034%2076%2045%2090%20C34%20104%2020%20104%200%2090Z%20M180%2090%20C160%2076%20146%2076%20135%2090%20C146%20104%20160%20104%20180%2090Z%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2290%22%20r%3D%2215%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2290%22%20r%3D%227%22%2F%3E%3Cpath%20d%3D%22M90%2069l5%2016%2016%205-16%205-5%2016-5-16-16-5%2016-5z%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23b83a4a%22%20fill-opacity%3D%22.22%22%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%2245%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%2245%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%2245%22%20cy%3D%22135%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%22135%22%20r%3D%222%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%2290%22%20r%3D%222.5%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
-  background-repeat:repeat;background-size:180px 180px;
-  opacity:.34;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23c9ad7c' stroke-width='1.05' opacity='.42'%3E%3Ccircle cx='90' cy='90' r='33'/%3E%3Ccircle cx='90' cy='90' r='47'/%3E%3Cpath d='M90 4 C112 34 112 54 90 90 C68 54 68 34 90 4Z M176 90 C146 112 126 112 90 90 C126 68 146 68 176 90Z M90 176 C68 146 68 126 90 90 C112 126 112 146 90 176Z M4 90 C34 68 54 68 90 90 C54 112 34 112 4 90Z'/%3E%3Cpath d='M90 22 L158 90 L90 158 L22 90Z'/%3E%3Cpath d='M90 57 L123 90 L90 123 L57 90Z'/%3E%3Ccircle cx='90' cy='90' r='3' fill='%23c9ad7c' stroke='none'/%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='none' stroke='%23d8c49e' stroke-width='.8' opacity='.32'%3E%3Ccircle cx='0' cy='0' r='20'/%3E%3Ccircle cx='180' cy='0' r='20'/%3E%3Ccircle cx='0' cy='180' r='20'/%3E%3Ccircle cx='180' cy='180' r='20'/%3E%3Cpath d='M0 0 Q45 45 0 90 Q-45 45 0 0 M180 0 Q135 45 180 90 Q225 45 180 0 M0 180 Q45 135 0 90 Q-45 135 0 180 M180 180 Q135 135 180 90 Q225 135 180 180'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:180px 180px,180px 180px;
+  background-position:center center,90px 90px;
+  background-repeat:repeat;
+  opacity:.29;mix-blend-mode:multiply;
 }
-#intro::after{opacity:.22;z-index:0;}
+#intro::after{opacity:.22;}
 #intro .stationery-stage{position:relative;z-index:2;}
-#site .hero > *{position:relative;z-index:1;}
-#site .content > *{position:relative;z-index:1;}
-#site .footer > *{position:relative;z-index:1;}
-#site .hero:before{z-index:2;}
-#site .content:before{z-index:2;}
-@media(max-width:600px){
-  #intro::after, #site .hero::after, #site .content::after, #site .footer::before{background-size:145px 145px;opacity:.30;}
+#site .hero > *, #site .content > *, #site .footer > *{position:relative;z-index:1;}
+@media(max-width:700px){
+  #intro::after, #site .hero::after, #site .content::after, #site .footer::before{
+    background-size:142px 142px,142px 142px;opacity:.25;
+  }
 }
-
 
 /* FINAL HERO POLISH — centered couple, balanced full-width arch, softer lace */
 #intro::after,

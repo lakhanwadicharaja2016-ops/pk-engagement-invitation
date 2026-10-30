@@ -943,6 +943,112 @@ body{background:#191210!important}
  .frame,.frame:before,.frame:after,.frame.reveal.visible:after{animation:none!important}
 }
 
+
+/* Animated gold-heart side ornaments replace the botanical leaf pattern */
+.frame:after{
+  opacity:.78!important;
+  background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2734%27%20height%3D%2752%27%20viewBox%3D%270%200%2034%2052%27%3E%3Cpath%20d%3D%27M17%2045%20C13%2040%203%2032%203%2021%20C3%2011%2015%208%2017%2018%20C19%208%2031%2011%2031%2021%20C31%2032%2021%2040%2017%2045Z%27%20fill%3D%27%23c6a36c%27%20fill-opacity%3D%27.9%27%20stroke%3D%27%23f0d9ad%27%20stroke-opacity%3D%27.75%27%20stroke-width%3D%271%27%2F%3E%3C%2Fsvg%3E"),url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2734%27%20height%3D%2752%27%20viewBox%3D%270%200%2034%2052%27%3E%3Cpath%20d%3D%27M17%2045%20C13%2040%203%2032%203%2021%20C3%2011%2015%208%2017%2018%20C19%208%2031%2011%2031%2021%20C31%2032%2021%2040%2017%2045Z%27%20fill%3D%27%238e8764%27%20fill-opacity%3D%27.85%27%20stroke%3D%27%23d6b16e%27%20stroke-opacity%3D%27.65%27%20stroke-width%3D%271%27%2F%3E%3C%2Fsvg%3E")!important;
+  background-size:34px 52px,34px 52px!important;
+  background-repeat:repeat-y,repeat-y!important;
+  background-position:left 0px top 0px,right 0px top 26px!important;
+  animation:heartBorderFloat 5.5s ease-in-out infinite!important;
+  filter:drop-shadow(0 0 4px #d6b16e33);
+}
+@keyframes heartBorderFloat{
+  0%,100%{opacity:.55; background-position:left 0px top 0px,right 0px top 26px;}
+  50%{opacity:.95; background-position:left 0px top 13px,right 0px top 39px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .frame:after{animation:none!important;}
+}
+
+
+/* NEON PK LOGO — soft ivory + champagne-gold illuminated seal */
+.seal-plaque{
+  animation: neonSealBreath 3.1s ease-in-out infinite;
+  will-change: box-shadow, filter;
+}
+.seal-plaque img{
+  filter:
+    drop-shadow(0 0 2px #fffdf0)
+    drop-shadow(0 0 5px #fff0c2)
+    drop-shadow(0 0 11px #f4d58a)
+    drop-shadow(0 0 19px #d8a84f);
+  animation: neonLogoBreath 2.7s ease-in-out infinite;
+  will-change: filter, transform;
+}
+.seal-plaque .plaque-ornament{
+  text-shadow: 0 0 5px #fff2c8aa, 0 0 11px #d6aa5c88;
+}
+@keyframes neonLogoBreath{
+  0%,100%{
+    filter:drop-shadow(0 0 2px #fffdf0) drop-shadow(0 0 5px #fff0c2) drop-shadow(0 0 10px #f4d58a) drop-shadow(0 0 16px #d8a84f);
+  }
+  50%{
+    filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 9px #fff4d2) drop-shadow(0 0 18px #ffe3a0) drop-shadow(0 0 29px #e6b85f);
+  }
+}
+@keyframes neonSealBreath{
+  0%,100%{
+    box-shadow:0 14px 40px #0007,inset 0 0 0 2px #b48d56aa,0 0 10px #f2d18a44,0 0 22px #d6a94c22;
+  }
+  50%{
+    box-shadow:0 14px 40px #0007,inset 0 0 0 2px #fff0c9,0 0 17px #fff0c288,0 0 36px #e4b85f88,0 0 55px #d6a94c44;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .seal-plaque,.seal-plaque img{animation:none!important}
+}
+
+
+/* LIVING GOLD HEARTS — individually floating, pulsing and softly glowing */
+.frame:after{
+  background-image:none!important;
+  animation:none!important;
+  opacity:1!important;
+}
+.frame-heart{
+  position:absolute!important;
+  z-index:2!important;
+  top:var(--heart-top);
+  left:var(--heart-left);
+  right:var(--heart-right);
+  width:24px;height:28px;
+  display:grid;place-items:center;
+  color:#c6a36c;
+  font-family:Georgia,serif;
+  font-size:25px;line-height:1;
+  pointer-events:none;
+  opacity:.84;
+  text-shadow:0 0 3px #f7e4b7aa,0 0 9px #d6b16e77;
+  transform-origin:center;
+  animation:livingHeart 3.6s ease-in-out infinite;
+  animation-delay:var(--heart-delay);
+  filter:drop-shadow(0 0 4px #d6b16e55);
+}
+.frame-heart:after{
+  content:"";position:absolute;inset:-5px;border-radius:50%;
+  background:radial-gradient(circle,#f3d79a44 0%,transparent 70%);
+  z-index:-1;opacity:.5;animation:heartHalo 2.8s ease-in-out infinite;
+  animation-delay:var(--heart-delay);
+}
+@keyframes livingHeart{
+  0%,100%{transform:translate3d(0,0,0) scale(.94) rotate(-3deg);opacity:.72;filter:drop-shadow(0 0 3px #d6b16e44)}
+  28%{transform:translate3d(0,-7px,0) scale(1.08) rotate(2deg);opacity:1;filter:drop-shadow(0 0 8px #f0d49a99)}
+  55%{transform:translate3d(0,-2px,0) scale(1.02) rotate(-1deg);opacity:.92}
+  78%{transform:translate3d(0,-5px,0) scale(1.1) rotate(2deg);opacity:1;filter:drop-shadow(0 0 11px #f0d49acc)}
+}
+@keyframes heartHalo{
+  0%,100%{transform:scale(.72);opacity:.2}
+  50%{transform:scale(1.35);opacity:.8}
+}
+@media(max-width:650px){
+  .frame-heart{font-size:20px;width:20px;height:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  .frame-heart,.frame-heart:after{animation:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -1063,7 +1169,7 @@ body{background:#191210!important}
           <p><strong style="color:#f4dfb5">Tuesday, 10 November 2026</strong><br>12:30 PM Onwards</p>
           <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Chintamani+Lawn%2C+Amravati%2C+Maharashtra" target="_blank" rel="noopener">OPEN DIRECTIONS IN GOOGLE MAPS ↗</a>
           <div class="venue-qr"><img src="venue-map-qr.png" alt="Scan to open venue location"><span>SCAN FOR DIRECTIONS</span></div>
-          <br><a class="calendar-link" id="calendarLink" href="assets/pranay-kashish-engagement.ics" download="Pranay-Kashish-Engagement.ics">SAVE TO MY PHONE CALENDAR ↓</a>
+          <br><a class="calendar-link" id="calendarLink" href="pranay-kashish-engagement.ics" download="Pranay-Kashish-Engagement.ics">SAVE TO MY PHONE CALENDAR ↓</a>
           <p class="date-note" style="margin-top:8px">Opens your phone calendar import with reminders</p>
         </div>
         <iframe class="map-frame" title="Google Maps preview for Chintamani Lawn, Amravati" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Chintamani%20Lawn%2C%20Amravati%2C%20Maharashtra&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
@@ -1091,6 +1197,25 @@ body{background:#191210!important}
 <script>
 const intro=document.getElementById('intro'),openBtn=document.getElementById('openInvite'),site=document.getElementById('site');
 const audio=document.getElementById('bgMusic'),musicToggle=document.getElementById('musicToggle'),musicLabel=document.getElementById('musicLabel');
+
+// Add separate gold hearts to each side of every invitation frame.
+// Each heart receives its own timing so the border feels gently alive.
+document.querySelectorAll('.frame').forEach((frame)=>{
+  const count=9;
+  for(let i=0;i<count;i++){
+    for(const side of ['left','right']){
+      const heart=document.createElement('span');
+      heart.className='frame-heart';
+      heart.setAttribute('aria-hidden','true');
+      heart.textContent='♥';
+      heart.style.setProperty('--heart-top',`${7 + i*(86/(count-1))}%`);
+      heart.style.setProperty('--heart-'+side, side==='left' ? '17px' : '17px');
+      heart.style.setProperty('--heart-delay',`${(i*.31 + (side==='right'?.47:0)).toFixed(2)}s`);
+      frame.appendChild(heart);
+    }
+  }
+});
+
 let petalsStarted=false;
 let invitationStarted=false;
 openBtn.addEventListener('click',()=>{
@@ -1148,7 +1273,7 @@ function updateCountdown(){
 }
 updateCountdown();setInterval(updateCountdown,1000);
 
-document.getElementById('calendarLink').href='assets/pranay-kashish-engagement.ics';
+document.getElementById('calendarLink').href='pranay-kashish-engagement.ics';
 </script>
 </body>
 </html>

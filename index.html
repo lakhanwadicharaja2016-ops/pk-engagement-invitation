@@ -1536,6 +1536,96 @@ body{background:#191210!important}
   .flower-bloom,.sage-leaves,.lantern-flame{animation:none!important}
 }
 
+
+/* TRUE ONE-SCREEN HERO: fill the visible phone screen without extra vertical overflow */
+@media(max-width:700px){
+  .hero{
+    height:100svh!important;
+    min-height:100svh!important;
+    max-height:100svh!important;
+    box-sizing:border-box!important;
+    padding:0 18px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+  }
+  .hero:before{inset:14px!important}
+  .hero-arch-scene{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+    opacity:.76!important;
+  }
+  .royal-arch{
+    width:min(100%,460px)!important;
+    height:auto!important;
+    max-height:78svh!important;
+    object-fit:contain;
+  }
+  .hero-inner{
+    position:relative!important;
+    width:100%!important;
+    max-width:520px!important;
+    margin:0 auto!important;
+    padding:0!important;
+    transform:translateY(-1.5svh);
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:clamp(3px,1.05svh,10px)!important;
+    z-index:2!important;
+  }
+  .hero-inner .overline:first-child{
+    margin:0 0 2px!important;
+    font-size:clamp(8px,2.1vw,10px)!important;
+    letter-spacing:.22em!important;
+  }
+  .hero h1{
+    margin:0!important;
+    font-size:clamp(39px,10.2vw,58px)!important;
+    line-height:1.04!important;
+  }
+  .ring-divider{
+    margin:clamp(3px,1.2svh,12px) auto!important;
+    transform:scale(clamp(.88, 1, 1));
+    transform-origin:center;
+  }
+  .hero-sub{
+    margin:clamp(4px,1.1svh,11px) 0!important;
+    font-size:clamp(11px,2.9vw,15px)!important;
+    letter-spacing:.13em!important;
+  }
+  .hero-inner .overline:last-child{
+    margin-top:clamp(3px,1svh,9px)!important;
+    font-size:clamp(8px,2vw,10px)!important;
+    letter-spacing:.2em!important;
+  }
+  .scroll-cue{
+    bottom:clamp(18px,3.2svh,28px)!important;
+    z-index:3!important;
+  }
+}
+@media(max-width:380px){
+  .hero{padding:0 14px!important}
+  .royal-arch{width:min(100%,390px)!important;max-height:75svh!important}
+  .hero-inner{gap:clamp(2px,.7svh,7px)!important}
+  .hero h1{font-size:clamp(36px,9.8vw,43px)!important}
+  .ring-divider{transform:scale(.88)!important;margin:1px auto!important}
+  .hero-sub{font-size:10px!important;letter-spacing:.1em!important}
+}
+@media(max-height:650px) and (max-width:700px){
+  .royal-arch{max-height:70svh!important}
+  .hero-inner{transform:translateY(-2svh) scale(.9);transform-origin:center}
+  .scroll-cue{bottom:12px!important}
+}
+
 </style>
 </head>
 <body>

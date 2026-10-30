@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Perfect Cuts Media//Pranay and Kashish Engagement//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:pranay-kashish-engagement-20261110@perfectcutsmedia
+DTSTAMP:20261030T031600Z
+DTSTART:20261110T070000Z
+DTEND:20261110T090000Z
+SUMMARY:Engagement Ceremony - Pranay & Kashish
+DESCRIPTION:Join us to celebrate the engagement of Pranay & Kashish.
+LOCATION:Chintamani Lawn\, Amravati\, Maharashtra
+BEGIN:VALARM
+TRIGGER:-P1D
+ACTION:DISPLAY
+DESCRIPTION:Tomorrow: Pranay & Kashish Engagement Ceremony
+END:VALARM
+BEGIN:VALARM
+TRIGGER:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:In one hour: Pranay & Kashish Engagement Ceremony
+END:VALARM
+END:VEVENT
+END:VCALENDAR

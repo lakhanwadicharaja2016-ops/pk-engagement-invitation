@@ -1276,6 +1276,107 @@ body{background:#191210!important}
   .frame-heart,.seal-plaque img{animation:none !important}
 }
 
+
+/* Venue mandap icon: champagne-gold outline with a restrained glow */
+.venue-pin{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  width:76px;
+  height:66px;
+  margin:8px auto 12px!important;
+  color:#d6b16e!important;
+}
+.venue-mandap-icon{
+  display:block;
+  width:68px;
+  height:60px;
+  overflow:visible;
+  filter:drop-shadow(0 0 3px rgba(255,224,164,.55))
+         drop-shadow(0 0 8px rgba(202,151,70,.38));
+  animation:venueMandapGlow 4.6s ease-in-out infinite;
+}
+@keyframes venueMandapGlow{
+  0%,100%{filter:drop-shadow(0 0 2px rgba(255,224,164,.42)) drop-shadow(0 0 6px rgba(202,151,70,.26))}
+  50%{filter:drop-shadow(0 0 4px rgba(255,239,197,.82)) drop-shadow(0 0 12px rgba(202,151,70,.52))}
+}
+/* Stacked date reveal: large 10, month/year beneath, then day and time */
+.date-reveal{
+  width:min(92%,430px);
+  padding:10px 8px;
+}
+.date-reveal .date-number{
+  display:block;
+  font:700 clamp(76px,16vw,112px)/.92 Cinzel,Georgia,serif!important;
+  letter-spacing:.025em;
+  color:#f7e3b8!important;
+  text-shadow:0 0 10px rgba(255,225,164,.52),0 0 24px rgba(224,185,106,.48)!important;
+}
+.date-reveal .date-month{
+  display:block;
+  margin-top:8px;
+  font:600 clamp(19px,4vw,27px)/1.2 Cinzel,Georgia,serif!important;
+  letter-spacing:.13em;
+  color:#d6b16e!important;
+  text-shadow:0 0 10px rgba(214,177,110,.34);
+}
+.date-reveal .date-time{
+  display:block;
+  margin-top:13px;
+  font:500 clamp(10px,2.3vw,12px)/1.5 Montserrat,Arial,sans-serif!important;
+  letter-spacing:.12em;
+  color:#ead8b8!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .venue-mandap-icon{animation:none!important}
+}
+
+
+/* CINEMATIC ROYAL ARCH SCENE — CSS/SVG animation, no external image assets */
+.hero{isolation:isolate}
+.hero-arch-scene{
+  position:absolute;z-index:1;inset:2% 0 4%;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;opacity:0;
+  animation:archSceneEnter 1.8s .25s ease-out forwards;
+}
+.royal-arch{
+  width:min(100%,900px);height:100%;max-height:88vh;overflow:visible;
+}
+.arch-outline,.arch-inner,.arch-base{
+  fill:none;stroke:url(#archGold);stroke-linecap:round;stroke-linejoin:round;
+}
+.arch-outline{stroke-width:3.2;opacity:.58;stroke-dasharray:2600;stroke-dashoffset:2600;animation:drawRoyalArch 3.2s .5s ease forwards}
+.arch-inner{stroke-width:1.3;opacity:.35;stroke-dasharray:1400;stroke-dashoffset:1400;animation:drawRoyalArch 3s 1s ease forwards}
+.arch-base{stroke-width:2;opacity:.42}
+.floral-trail{fill:none;stroke:#cbb58d;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform-box:fill-box;transform-origin:top center;animation:garlandDrop 1.7s 1.8s cubic-bezier(.2,.75,.25,1) forwards,garlandSway 6s 3.6s ease-in-out infinite}
+.flower-bloom{fill:#eee3cf;stroke:#d7c4a4;stroke-width:1.2;filter:drop-shadow(0 0 5px #f5e5c266)}
+.sage-leaves{fill:#829078;stroke:#a4aa8d;stroke-width:1.1;opacity:.82}
+.hanging-lantern{fill:none;stroke:#d6b16e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform-box:fill-box;transform-origin:top center;animation:lanternDrop 1.5s 2.15s ease-out forwards,lanternSway 5.5s 3.7s ease-in-out infinite}
+.lantern-flame{fill:#ffe7ae;stroke:none;filter:drop-shadow(0 0 5px #ffdb91) drop-shadow(0 0 12px #d7a44e)}
+.arch-stars{fill:#e7c987;opacity:0;filter:drop-shadow(0 0 6px #e8c77f);animation:starsAppear 1s 3s ease forwards,starsTwinkle 3.4s 4s ease-in-out infinite}
+@keyframes archSceneEnter{to{opacity:1}}
+@keyframes drawRoyalArch{to{stroke-dashoffset:0}}
+@keyframes garlandDrop{0%{opacity:0;transform:translateY(-32px)}100%{opacity:.9;transform:translateY(0)}}
+@keyframes garlandSway{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
+@keyframes lanternDrop{0%{opacity:0;transform:translateY(-25px)}100%{opacity:.92;transform:translateY(0)}}
+@keyframes lanternSway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes starsAppear{to{opacity:.78}}
+@keyframes starsTwinkle{0%,100%{opacity:.48}50%{opacity:1}}
+.hero-inner{z-index:2}
+@media(max-width:600px){
+  .hero-arch-scene{inset:5% -18% 7%;opacity:.78}
+  .royal-arch{width:132%;max-width:none;max-height:76vh}
+  .hero-inner{width:100%}
+  .hero h1{margin:14px 0 5px}
+  .hanging-lantern{stroke-width:2.8}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-arch-scene{opacity:1;animation:none}
+  .arch-outline,.arch-inner{stroke-dashoffset:0;animation:none}
+  .floral-trail,.hanging-lantern,.arch-stars{opacity:.85;animation:none}
+}
+
 </style>
 </head>
 <body>
@@ -1308,6 +1409,62 @@ body{background:#191210!important}
 
 <div id="site">
   <header class="hero">
+    <div class="hero-arch-scene" aria-hidden="true">
+      <svg class="royal-arch" viewBox="0 0 900 760" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <linearGradient id="archGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f3dfb4"/>
+            <stop offset=".48" stop-color="#c59a58"/>
+            <stop offset="1" stop-color="#f0d39a"/>
+          </linearGradient>
+          <linearGradient id="lanternGlow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe8b7" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#b9823c" stop-opacity=".25"/>
+          </linearGradient>
+        </defs>
+        <!-- Mughal-inspired scalloped arch -->
+        <path class="arch-outline" d="M118 690 V330 C118 267 151 225 207 196 C238 180 252 149 252 116 C252 83 280 61 310 77 C337 92 342 125 360 139 C382 157 408 143 421 117 C437 84 466 66 493 82 C520 98 517 132 540 151 C562 171 594 162 612 135 C632 104 666 95 689 119 C710 141 700 174 718 199 C739 230 782 253 782 330 V690"/>
+        <path class="arch-inner" d="M145 680 V333 C145 278 175 242 225 214 C265 191 280 156 280 118 M755 680 V333 C755 278 725 242 675 214 C635 191 620 156 620 118"/>
+        <path class="arch-base" d="M105 690 H795"/>
+        <!-- Floral hanging trails -->
+        <g class="floral-trail trail-left">
+          <path d="M158 120 C135 190 155 235 177 282 C190 310 183 342 167 370"/>
+          <path d="M190 145 C174 205 199 246 211 281"/>
+          <g class="flower-bloom">
+            <circle cx="157" cy="142" r="10"/><circle cx="145" cy="132" r="7"/><circle cx="169" cy="131" r="7"/><circle cx="146" cy="151" r="7"/><circle cx="169" cy="153" r="7"/>
+            <circle cx="191" cy="216" r="8"/><circle cx="180" cy="208" r="5"/><circle cx="202" cy="207" r="5"/><circle cx="181" cy="224" r="5"/><circle cx="202" cy="224" r="5"/>
+            <circle cx="176" cy="300" r="8"/><circle cx="165" cy="292" r="5"/><circle cx="187" cy="291" r="5"/><circle cx="165" cy="308" r="5"/><circle cx="187" cy="308" r="5"/>
+          </g>
+          <g class="sage-leaves"><path d="M159 180 q-25 -19 -27 5 q14 17 27 -5 M181 260 q24 -19 25 5 q-13 17 -25 -5 M174 330 q-22 -17 -24 5 q13 16 24 -5"/></g>
+        </g>
+        <g class="floral-trail trail-right">
+          <path d="M742 120 C765 190 745 235 723 282 C710 310 717 342 733 370"/>
+          <path d="M710 145 C726 205 701 246 689 281"/>
+          <g class="flower-bloom">
+            <circle cx="743" cy="142" r="10"/><circle cx="731" cy="131" r="7"/><circle cx="755" cy="131" r="7"/><circle cx="732" cy="152" r="7"/><circle cx="755" cy="153" r="7"/>
+            <circle cx="709" cy="216" r="8"/><circle cx="698" cy="207" r="5"/><circle cx="720" cy="208" r="5"/><circle cx="698" cy="224" r="5"/><circle cx="720" cy="224" r="5"/>
+            <circle cx="724" cy="300" r="8"/><circle cx="713" cy="291" r="5"/><circle cx="735" cy="292" r="5"/><circle cx="713" cy="308" r="5"/><circle cx="735" cy="308" r="5"/>
+          </g>
+          <g class="sage-leaves"><path d="M741 180 q25 -19 27 5 q-14 17 -27 -5 M719 260 q-24 -19 -25 5 q13 17 25 -5 M726 330 q22 -17 24 5 q-13 16 -24 -5"/></g>
+        </g>
+        <!-- Hanging lanterns -->
+        <g class="hanging-lantern lantern-left">
+          <path d="M235 30 V92"/>
+          <path d="M226 91 H244 L249 106 L245 145 Q235 159 225 145 L221 106 Z"/>
+          <path d="M229 105 H241 L243 139 Q235 148 227 139 Z" fill="url(#lanternGlow)"/>
+          <path d="M226 106 H244 M229 146 H241 M235 159 V170"/>
+          <circle cx="235" cy="117" r="3" class="lantern-flame"/>
+        </g>
+        <g class="hanging-lantern lantern-right">
+          <path d="M665 30 V92"/>
+          <path d="M656 91 H674 L679 106 L675 145 Q665 159 655 145 L651 106 Z"/>
+          <path d="M659 105 H671 L673 139 Q665 148 657 139 Z" fill="url(#lanternGlow)"/>
+          <path d="M656 106 H674 M659 146 H671 M665 159 V170"/>
+          <circle cx="665" cy="117" r="3" class="lantern-flame"/>
+        </g>
+        <g class="arch-stars"><path d="M450 43 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/><path d="M302 370 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/><path d="M598 370 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z"/></g>
+      </svg>
+    </div>
     <div class="hero-inner">
       <div class="overline">Together with their families</div>
       <h1>Pranay</h1>
@@ -1346,7 +1503,11 @@ body{background:#191210!important}
         <button class="date-heart" id="revealDate" aria-label="Reveal engagement date">
           <span class="heart-shape"></span><span class="heart-sparkle hs-one" aria-hidden="true">✦</span><span class="heart-sparkle hs-two" aria-hidden="true">✧</span><span class="heart-sparkle hs-three" aria-hidden="true">✦</span><span class="heart-sparkle hs-four" aria-hidden="true">✧</span><span class="heart-sparkle hs-five" aria-hidden="true">✦</span><span class="date-prompt">TAP THE HEART</span>
         </button>
-        <div class="date-reveal" id="dateReveal"><strong>10 November 2026</strong><span>TUESDAY · 12:30 PM ONWARDS</span></div>
+        <div class="date-reveal" id="dateReveal">
+          <strong class="date-number">10</strong>
+          <span class="date-month">NOVEMBER 2026</span>
+          <span class="date-time">TUESDAY · 12:30 PM ONWARDS</span>
+        </div>
       </div>
       <p class="date-note">Tap the heart to reveal our special day</p>
     </div>
@@ -1384,7 +1545,23 @@ body{background:#191210!important}
     <div class="frame reveal">
       <div class="venue-paper-heading">
         <span class="venue-kicker">THE CELEBRATION PLACE</span>
-        <span class="venue-pin" aria-hidden="true">⌖</span>
+        <span class="venue-pin" aria-hidden="true">
+          <svg class="venue-mandap-icon" viewBox="0 0 240 210" role="img" aria-label="Wedding mandap with heart">
+            <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 63 L120 10 L218 63"/>
+              <path d="M22 63 Q120 80 218 63"/>
+              <path d="M22 63 V79 M218 63 V79"/>
+              <path d="M34 80 V181 M56 80 V181 M184 80 V181 M206 80 V181"/>
+              <path d="M34 181 H56 M184 181 H206"/>
+              <path d="M22 190 H218"/>
+              <path d="M91 181 V132 Q91 111 108 103"/>
+              <path d="M149 181 V132 Q149 111 132 103"/>
+              <path d="M120 105 L103 89 Q91 77 101 66 Q112 55 120 68 Q128 55 139 66 Q149 77 137 89 Z"/>
+              <path d="M44 83 Q57 105 72 111 M196 83 Q183 105 168 111"/>
+              <path d="M65 84 Q61 99 51 108 M175 84 Q179 99 189 108"/>
+            </g>
+          </svg>
+        </span>
         <h2 class="names-line">Venue</h2>
         <span class="venue-rule"><i>✦</i></span>
         <p class="venue-intro">We would be delighted to celebrate this special day with you.</p>

@@ -1,36 +1,26 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Perfect Cuts Media//Pranay Kashish Engagement//EN
+PRODID:-//Perfect Cuts Media//Pranay and Kashish Engagement//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-BEGIN:VTIMEZONE
-TZID:Asia/Kolkata
-BEGIN:STANDARD
-TZOFFSETFROM:+0530
-TZOFFSETTO:+0530
-TZNAME:IST
-DTSTART:19700101T000000
-END:STANDARD
-END:VTIMEZONE
 BEGIN:VEVENT
-UID:pranay-kashish-engagement-20261110@perfectcutsmedia.info
-DTSTAMP:20261030T044500Z
-DTSTART;TZID=Asia/Kolkata:20261110T123000
-DTEND;TZID=Asia/Kolkata:20261110T133000
-SUMMARY:Engagement Ceremony - Pranay & Kashish
-LOCATION:Chintamani Lawn\, Amravati\, Maharashtra
-DESCRIPTION:Pranay & Kashish Engagement Ceremony. 12:30 PM onwards. Please confirm the end time with the hosts if needed.
-STATUS:CONFIRMED
-TRANSP:OPAQUE
+UID:pranay-kashish-engagement-20261111@perfectcutsmedia.info
+DTSTAMP:20261031T000000Z
+DTSTART;TZID=Asia/Kolkata:20261111T123000
+DTEND;TZID=Asia/Kolkata:20261111T133000
+SUMMARY:Pranay & Kashish - Engagement Ceremony
+LOCATION:Manor Mangalya Hall\, Amravati\, Maharashtra
+DESCRIPTION:Engagement Ceremony of Pranay & Kashish. Directions: https://maps.app.goo.gl/4QDBnGJtis4zAQgY8
+URL:https://maps.app.goo.gl/4QDBnGJtis4zAQgY8
 BEGIN:VALARM
 TRIGGER:-P1D
 ACTION:DISPLAY
-DESCRIPTION:Tomorrow: Pranay & Kashish Engagement at Chintamani Lawn.
+DESCRIPTION:Tomorrow: Pranay & Kashish Engagement
 END:VALARM
 BEGIN:VALARM
 TRIGGER:-PT1H
 ACTION:DISPLAY
-DESCRIPTION:In 1 hour: Pranay & Kashish Engagement at Chintamani Lawn.
+DESCRIPTION:In 1 hour: Pranay & Kashish Engagement
 END:VALARM
 END:VEVENT
 END:VCALENDAR

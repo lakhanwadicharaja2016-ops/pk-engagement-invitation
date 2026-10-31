@@ -3554,6 +3554,194 @@ body{
 }
 </style>
 
+
+<style id="final-mobile-layout-and-calendar-polish">
+/* Keep the envelope group precisely centered in the visible invitation screen. */
+#intro.sage-envelope-intro .stationery-stage{
+  width:100%;
+  height:100%;
+  min-height:100svh;
+  min-height:100dvh;
+  padding:0!important;
+}
+#intro.sage-envelope-intro .stationery-envelope-wrap{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  width:min(84vw,560px)!important;
+  margin:0!important;
+  transform:translate(-50%,-50%)!important;
+  z-index:3!important;
+}
+#intro.sage-envelope-intro .stationery-envelope-btn{
+  width:100%!important;
+  gap:18px!important;
+}
+#intro.sage-envelope-intro .stationery-envelope{
+  width:100%!important;
+  aspect-ratio:1.48/1!important;
+  max-height:min(48svh,360px)!important;
+}
+#intro.sage-envelope-intro .stationery-tap{
+  display:block!important;
+  margin-top:0!important;
+  line-height:1.5!important;
+}
+#intro.sage-envelope-intro .stationery-kicker{
+  top:clamp(54px,8svh,88px)!important;
+}
+#intro.sage-envelope-intro .stationery-footer{
+  bottom:clamp(38px,7svh,76px)!important;
+}
+#intro.sage-envelope-intro .botanical{
+  top:50%!important;
+  transform:translateY(-50%)!important;
+}
+@media(max-width:700px){
+  #intro.sage-envelope-intro .stationery-envelope-wrap{
+    width:min(84vw,520px)!important;
+  }
+  #intro.sage-envelope-intro .stationery-envelope{
+    max-height:min(42svh,330px)!important;
+  }
+  #intro.sage-envelope-intro .stationery-tap{
+    font-size:clamp(9px,2.5vw,11px)!important;
+    letter-spacing:.15em!important;
+  }
+}
+
+/* Mobile hero: use the full available width and balance the name/rings stack. */
+#site .hero{
+  min-height:100svh!important;
+  min-height:100dvh!important;
+  height:100svh!important;
+  height:100dvh!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:clamp(58px,8svh,84px) 18px clamp(66px,9svh,90px)!important;
+  overflow:hidden!important;
+}
+#site .hero .hero-inner{
+  position:relative!important;
+  inset:auto!important;
+  left:auto!important;
+  top:auto!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:min(100%,760px)!important;
+  max-width:760px!important;
+  margin:0 auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  gap:clamp(7px,1.5svh,15px)!important;
+  padding:0 4px!important;
+}
+#site .hero .hero-inner h1{
+  width:100%!important;
+  max-width:100%!important;
+  margin:0!important;
+  padding:0!important;
+  font-family:Cinzel,Georgia,serif!important;
+  font-weight:700!important;
+  font-size:clamp(48px,8vw,76px)!important;
+  line-height:1.08!important;
+  letter-spacing:.015em!important;
+  text-align:center!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+}
+#site .hero .hero-inner .overline:first-child,
+#site .hero .hero-inner .overline:last-child{
+  width:100%!important;
+  max-width:100%!important;
+  text-align:center!important;
+  font-size:clamp(10px,2.3vw,13px)!important;
+  line-height:1.6!important;
+  letter-spacing:clamp(.12em,.4vw,.22em)!important;
+  white-space:normal!important;
+}
+#site .hero .hero-inner .ring-icon-wrap{
+  width:clamp(108px,18vw,146px)!important;
+  height:auto!important;
+  aspect-ratio:1.08/1!important;
+  flex:0 0 auto!important;
+  margin:clamp(3px,.8svh,10px) auto!important;
+}
+#site .hero .hero-inner .hero-sub{
+  width:100%!important;
+  margin:0!important;
+  text-align:center!important;
+  font-size:clamp(13px,2.4vw,18px)!important;
+  line-height:1.55!important;
+  letter-spacing:clamp(.09em,.35vw,.16em)!important;
+}
+@media(max-width:700px){
+  #site .hero{
+    padding:64px 14px 72px!important;
+  }
+  #site .hero .hero-inner{
+    width:100%!important;
+    max-width:100%!important;
+    gap:clamp(7px,1.25svh,13px)!important;
+  }
+  #site .hero .hero-inner h1{
+    font-size:clamp(48px,12.2vw,74px)!important;
+    line-height:1.04!important;
+    letter-spacing:0!important;
+  }
+  #site .hero .hero-inner .ring-icon-wrap{
+    width:clamp(112px,29vw,148px)!important;
+    margin:4px auto!important;
+  }
+  #site .hero .hero-inner .overline:first-child,
+  #site .hero .hero-inner .overline:last-child{
+    font-size:clamp(10px,2.7vw,13px)!important;
+    letter-spacing:.16em!important;
+  }
+  #site .hero .hero-inner .hero-sub{
+    font-size:clamp(13px,3.3vw,17px)!important;
+    letter-spacing:.11em!important;
+  }
+}
+@media(max-width:380px){
+  #site .hero .hero-inner h1{font-size:clamp(45px,12vw,58px)!important}
+  #site .hero .hero-inner .ring-icon-wrap{width:108px!important}
+}
+@media(max-height:740px) and (max-width:700px){
+  #site .hero{padding-top:56px!important;padding-bottom:62px!important}
+  #site .hero .hero-inner{gap:6px!important}
+  #site .hero .hero-inner h1{font-size:clamp(43px,10.8vw,62px)!important}
+  #site .hero .hero-inner .ring-icon-wrap{width:100px!important;margin:1px auto!important}
+}
+
+/* Requested venue typography: Cinzel Bold. */
+#site .venue-info h3.venue-name-cinzel{
+  font-family:Cinzel,Georgia,serif!important;
+  font-size:clamp(24px,4.2vw,34px)!important;
+  font-weight:700!important;
+  line-height:1.2!important;
+  letter-spacing:.015em!important;
+  color:#8f263b!important;
+  text-align:center!important;
+  overflow-wrap:anywhere!important;
+  text-shadow:none!important;
+}
+@media(max-width:600px){
+  #site .venue-info h3.venue-name-cinzel{
+    font-size:clamp(23px,6.4vw,30px)!important;
+    line-height:1.22!important;
+    letter-spacing:0!important;
+  }
+  #site .venue-info{width:100%!important;min-width:0!important}
+  #site .venue-info .date-note{overflow-wrap:anywhere!important}
+}
+</style>
+
 </head>
 <body>
 <div id="intro" class="sage-envelope-intro">
@@ -3784,14 +3972,13 @@ body{
       <div class="venue-layout">
         <div class="venue-info">
           <div class="venue-card-label">OUR VENUE</div>
-          <h3>Manor Mangalya Hall</h3>
+          <h3 class="venue-name-cinzel">Manor Mangalya Hall</h3>
           <p class="venue-city">Amravati, Maharashtra</p>
           <p><strong style="color:#f4dfb5">Wednesday, 11 November 2026</strong><br>12:30 PM Onwards</p>
           <a class="map-link" href="https://maps.app.goo.gl/4QDBnGJtis4zAQgY8" target="_blank" rel="noopener">OPEN DIRECTIONS IN GOOGLE MAPS ↗</a>
           <div class="venue-qr"><img src="venue-map-qr.png" alt="Scan to open venue location"><span>SCAN FOR DIRECTIONS</span></div>
-          <br><a class="calendar-link" id="calendarLink" href="pranay-kashish-engagement-updated.ics" download="Pranay-Kashish-Engagement.ics">DOWNLOAD CALENDAR FILE (.ICS) ↓</a>
-          <br><a class="calendar-link" id="googleCalendarLink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Engagement%20Ceremony%20-%20Pranay%20%26%20Kashish&dates=20261111T070000Z%2F20261111T080000Z&details=Pranay%20%26%20Kashish%20Engagement%20Ceremony.%2012%3A30%20PM%20onwards.&location=Manor%20Mangalya%20Hall%2C%20Amravati%2C%20Maharashtra&ctz=Asia%2FKolkata" target="_blank" rel="noopener">ADD TO GOOGLE CALENDAR ↗</a>
-          <p class="date-note" style="margin-top:8px">Android: use “Add to Google Calendar”. iPhone: use the calendar file. Reminders are included in the .ics file.</p>
+          <br><a class="calendar-link" id="calendarSaveLink" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Engagement%20Ceremony%20-%20Pranay%20%26%20Kashish&dates=20261111T070000Z%2F20261111T080000Z&details=Pranay%20%26%20Kashish%20Engagement%20Ceremony.%2012%3A30%20PM%20onwards.&location=Manor%20Mangalya%20Hall%2C%20Amravati%2C%20Maharashtra&ctz=Asia%2FKolkata" target="_blank" rel="noopener">SAVE IN CALENDAR ↗</a>
+          <p class="date-note" style="margin-top:8px">Tap to open the calendar save screen. Confirm “Save” in your calendar app to add the event.</p>
         </div>
         <iframe class="map-frame" title="Google Maps preview for Manor Mangalya Hall, Amravati" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=20.9011889%2C77.7622924&z=17&output=embed"></iframe>
       </div>
@@ -3894,7 +4081,16 @@ function updateCountdown(){
 }
 updateCountdown();setInterval(updateCountdown,1000);
 
-document.getElementById('calendarLink').href='pranay-kashish-engagement-updated.ics';
+// Open the most suitable calendar-add flow for the visitor's device.
+const calendarSaveLink = document.getElementById('calendarSaveLink');
+const isAppleMobile = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+if (isAppleMobile) {
+  // iOS opens the .ics event preview, where the user can tap Add.
+  calendarSaveLink.href = 'pranay-kashish-engagement-updated.ics';
+  calendarSaveLink.removeAttribute('target');
+  calendarSaveLink.removeAttribute('rel');
+}
 </script>
 </body>
 </html>

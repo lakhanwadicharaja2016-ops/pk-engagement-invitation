@@ -1289,6 +1289,135 @@ body::before {
   body { background-attachment:scroll !important; }
 }
 
+
+/* FINAL USER REQUEST: date hierarchy + full-screen, responsive second-page hero */
+.date-reveal{
+  min-width:min(82vw,520px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+  padding:12px 10px;
+}
+.date-reveal .date-day{
+  display:block;
+  font-family:'Cinzel',serif!important;
+  font-size:clamp(58px,10vw,92px)!important;
+  line-height:.98!important;
+  font-weight:800!important;
+  letter-spacing:.04em;
+  color:#f7e3b8!important;
+  text-shadow:0 2px 18px #e0b96a88,0 0 28px #e0b96a44!important;
+}
+.date-reveal .date-month{
+  display:block;
+  margin-top:5px;
+  font-family:'Cinzel',serif!important;
+  font-size:clamp(23px,4.2vw,38px)!important;
+  line-height:1.18!important;
+  font-weight:600!important;
+  letter-spacing:.055em;
+  color:#f0d9ad!important;
+  text-shadow:0 2px 12px #0008!important;
+}
+.date-reveal .date-meta{
+  display:block;
+  margin-top:10px;
+  font-family:'Montserrat',sans-serif!important;
+  font-size:clamp(9px,1.5vw,12px)!important;
+  font-weight:600!important;
+  letter-spacing:.12em!important;
+  line-height:1.6!important;
+  color:#f4ead8!important;
+  text-shadow:0 1px 6px #0009!important;
+}
+.hero{
+  min-height:100svh!important;
+  padding:clamp(76px,10vh,112px) clamp(14px,4vw,40px) clamp(76px,10vh,104px)!important;
+}
+.hero-inner{
+  width:min(1120px,96vw)!important;
+  max-width:1120px!important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(5px,1.1vh,14px);
+}
+.hero .overline{
+  font-size:clamp(10px,1.35vw,16px)!important;
+  line-height:1.5!important;
+  letter-spacing:.22em!important;
+}
+.hero h1{
+  width:100%;
+  font-size:clamp(50px,9vw,118px)!important;
+  line-height:1.06!important;
+  letter-spacing:.045em!important;
+  margin:clamp(7px,1.3vh,16px) 0!important;
+  overflow-wrap:anywhere;
+}
+.hero .ring-divider{
+  width:190px!important;
+  height:clamp(82px,11vh,116px)!important;
+  margin:0 auto!important;
+  flex:0 0 auto;
+}
+.hero .ring{
+  width:clamp(62px,5.5vw,82px)!important;
+  height:clamp(62px,5.5vw,82px)!important;
+  border-width:8px!important;
+}
+.hero .ring-gold{left:calc(50% - 72px)!important;top:50%!important;transform:translateY(-50%)!important}
+.hero .ring-platinum{left:calc(50% - 27px)!important;top:50%!important;transform:translateY(-50%)!important}
+.hero .hero-sub{
+  font-size:clamp(15px,2.3vw,26px)!important;
+  line-height:1.5!important;
+  letter-spacing:.14em!important;
+  margin:clamp(7px,1.5vh,18px) 0!important;
+}
+@media(max-width:600px){
+  .hero{
+    min-height:100svh!important;
+    padding:76px 15px 76px!important;
+  }
+  .hero-inner{width:100%!important;gap:8px!important}
+  .hero h1{
+    font-size:clamp(43px,12.5vw,68px)!important;
+    letter-spacing:.025em!important;
+    line-height:1.08!important;
+    margin:6px 0!important;
+  }
+  .hero .overline{
+    font-size:clamp(9px,2.5vw,11px)!important;
+    letter-spacing:.16em!important;
+  }
+  .hero .ring-divider{
+    width:150px!important;
+    height:78px!important;
+  }
+  .hero .ring{
+    width:62px!important;height:62px!important;border-width:7px!important;
+  }
+  .hero .ring-gold{left:calc(50% - 58px)!important}
+  .hero .ring-platinum{left:calc(50% - 19px)!important}
+  .hero .hero-sub{
+    font-size:clamp(13px,3.7vw,17px)!important;
+    letter-spacing:.1em!important;
+    margin:8px 0!important;
+  }
+  .date-reveal{min-width:84vw;padding:8px 4px}
+  .date-reveal .date-day{font-size:clamp(56px,17vw,76px)!important}
+  .date-reveal .date-month{font-size:clamp(22px,6.2vw,29px)!important}
+  .date-reveal .date-meta{font-size:9px!important;letter-spacing:.08em!important}
+}
+@media(max-height:650px) and (min-width:601px){
+  .hero{padding-top:58px!important;padding-bottom:58px!important}
+  .hero h1{font-size:clamp(44px,7vw,82px)!important}
+  .hero .ring-divider{height:70px!important}
+}
+
 </style>
 </head>
 <body>
@@ -1359,7 +1488,7 @@ body::before {
         <button class="date-heart" id="revealDate" aria-label="Reveal engagement date">
           <span class="heart-shape"></span><span class="heart-sparkle hs-one" aria-hidden="true">✦</span><span class="heart-sparkle hs-two" aria-hidden="true">✧</span><span class="heart-sparkle hs-three" aria-hidden="true">✦</span><span class="heart-sparkle hs-four" aria-hidden="true">✧</span><span class="heart-sparkle hs-five" aria-hidden="true">✦</span><span class="date-prompt">TAP THE HEART</span>
         </button>
-        <div class="date-reveal" id="dateReveal"><strong>11 November 2026</strong><span>WEDNESDAY · 12:30 PM ONWARDS</span></div>
+        <div class="date-reveal" id="dateReveal"><strong class="date-day">11</strong><span class="date-month">November 2026</span><span class="date-meta">WEDNESDAY · 12:30 PM ONWARDS</span></div>
       </div>
       <p class="date-note">Tap the heart to reveal our special day</p>
     </div>
@@ -1407,7 +1536,7 @@ body::before {
           <div class="venue-card-label">OUR VENUE</div>
           <h3>Manor Mangalya Hall</h3>
           <p class="venue-city">Amravati, Maharashtra</p>
-          <p><strong style="color:#f4dfb5">Tuesday, 11 November 2026</strong><br>12:30 PM Onwards</p>
+          <p><strong style="color:#f4dfb5">Wednesday, 11 November 2026</strong><br>12:30 PM Onwards</p>
           <a class="map-link" href="https://maps.app.goo.gl/4QDBnGJtis4zAQgY8" target="_blank" rel="noopener">OPEN DIRECTIONS IN GOOGLE MAPS ↗</a>
           <div class="venue-qr"><img src="venue-map-qr.png" alt="Scan to open venue location"><span>SCAN FOR DIRECTIONS</span></div>
           <br><a class="calendar-link" id="calendarLink" href="pranay-kashish-engagement.ics" download="Pranay-Kashish-Engagement.ics">SAVE TO MY PHONE CALENDAR ↓</a>
